@@ -154,4 +154,34 @@ function getQuiz(quizID) {
             }
         }
     }
+    if (quizID == "age") {
+        return {
+            questions:[
+                {
+                    question: "What is your age?",
+                    responses: [
+                        "0-10",
+                        "11-20",
+                        "21-30",
+                        "31-40",
+                        "41-50",
+                        "51+"
+                    ],
+                    functions: [
+                        ()=>{quizVars.choice = "0-10"},
+                        ()=>{quizVars.choice = "11-20"},
+                        ()=>{quizVars.choice = "21-30"},
+                        ()=>{quizVars.choice = "31-40"},
+                        ()=>{quizVars.choice = "41-50"},
+                        ()=>{quizVars.choice = "51+"},
+                    ]},
+            ],
+            endFunction: ()=>{
+                return 'Your age is in the range '+String(quizVars.choice)+'!<br>Please like and subscribe for more quizzes!'
+            },
+            startFunction: ()=>{
+                quizVars.choice = 0
+            }
+        }
+    }
 }
