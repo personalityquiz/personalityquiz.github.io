@@ -25,6 +25,7 @@ function nextQuestion() {
     if (quiz.questions.length == 0) {
         document.getElementById("questionBox").innerHTML = "";
         result = quiz.endFunction()
+        document.getElementById("question").innerHTML = "Result!"
         if (result != undefined) {
             var endHeader = document.createElement('h2');
             var endBox = document.createElement('p');
