@@ -115,4 +115,43 @@ function getQuiz(quizID) {
             }
         }
     }
+    if (quizID == "secret") {
+        return {
+            questions:[
+                {
+                    question: "Welcome to the secret quiz",
+                    responses: [
+                        "What",
+                        "No let me leave please"
+                    ],
+                    functions: [
+                        ()=>{},
+                        ()=>{quiz.questions.shift();},
+                    ]},
+                {
+                    question: "Ok now pick one of these",
+                    responses: [
+                        "Ok i want to leave",
+                        "Let me leave",
+                    ],
+                    functions: [
+                        ()=>{},
+                        ()=>{},
+                    ]},
+                {
+                    question: "Ok fine",
+                    responses: [
+                        "Goodbye",
+                    ],
+                    functions: [
+                        ()=>{},
+                    ]},
+            ],
+            endFunction: ()=>{
+                return 'You are epick hackerman'
+            },
+            startFunction: ()=>{
+            }
+        }
+    }
 }
