@@ -11,7 +11,7 @@ main {
 section {
     border: 1px solid black;
     padding: 30px;
-    height: 15em;
+    min-height: 15em;
     position: relative;
 }
 section header {
@@ -35,7 +35,7 @@ body > header {
     width: 100%;
     font-weight: bold;
     font-size: 200%;
-    height: 1.5em;
+    min-height: 1.5em;
     background-color: blue;
     color: white;
     padding: .5em;
