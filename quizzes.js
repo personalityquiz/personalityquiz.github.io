@@ -193,11 +193,11 @@ function getQuiz(quizID) {
                     responses: [
                         "One",
                         "Two",
-			"Seventy-Nine"
+			            "Seventy-Nine"
                     ],
                     functions: [
                         ()=>{quizVars.points++;},
-			()=>{quizVars.points+=2;},
+			            ()=>{quizVars.points+=2;},
                         ()=>{}
                 ]},
                 {
