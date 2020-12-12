@@ -298,4 +298,101 @@ function getQuiz(quizID) {
             }
         }
     }
+    if (quizID == "compuper"){
+        return {
+            questions:[
+                {
+                    question: "Which one",
+                    responses: [
+                        "Compuper",
+                        "Phoney",
+                        "tableto",
+                        "giggle and hoot"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points += 4},
+                        ()=>{quizVars.isPhoney = true},
+                        ()=>{quizVars.points += 1 },
+                        ()=>{quizVars.cartoonPoints += 1}
+                    ]},
+                {
+                    question: "circuitboard",
+                    responses: [
+                        "YOUR MOM!",
+                        "green thing",
+                        "pc master race",
+                        "the wigggles"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points += 3},
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.points += 4},
+                        ()=>{quizVars.cartoonPoints += 1}
+                    ]},
+                {
+                    question: "why",
+                    responses: [
+                        "because...",
+                        "mmm yummy compuper",
+                        "peppa pig",
+                        "just to suffer"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.points += 4},
+                        ()=>{quizVars.cartoonPoints += 1 },
+                        ()=>{quizVars.points += 3}
+                    ]}
+            ],
+            endFunction: ()=>{
+                if(quizVars.isPhoney){
+                    return 'what a phoney imagine being a phoney...'
+                }
+                else if(quizVars.cartoonPoints > 1){
+                    return "I don't know what to say... try watching the dinosaur train?"
+                }
+                else if(quizVars.points == 1){
+                    return 'this should be impossible... should it not?'
+                }
+                else if(quizVars.points == 2){
+                    return 'COUNTRY ROADS, TAKE ME HOME... TO THE PLACE I BELONG, WEST VIRGINIA, MOUNTAIN MOMMA, TAKE ME HOME, COUNTRY ROADS!'
+                }
+                else if(quizVars.points == 3){
+                    return 'never gonna meme you up'
+                }
+                else if(quizVars.points == 4){
+                    return 'thanks for playing! remember to like and subsrcibe' + '\n' + 'wait i almost forgot your answer is compuper'
+                }
+                else if(quizVars.points  == 5){
+                    return 'Insert witty answer here: '
+                }
+                else if(quizVars.points  == 6){
+                    return 'Yay you are 50% good at compuper!'
+                }
+                else if(quizVars.points  == 7){
+                    return 'you desire the bane of anime only to find that it is rubbish'
+                }
+                else if(quizVars.points  == 8){
+                    return 'you have compuper potential kid... real potential... why dont you sign up at freecomuperinstitute?' + '\n' + '(no we didnt make a typo that was the only domain available)'
+                }
+                else if(quizVars.points  == 9){
+                    return 'You are poggest at compuper'
+                }
+                else if(quizVars.points  == 10){
+                    return 'You are so pog at compuper, that santa will not give you one'
+                }
+                else if(quizVars.points  == 11){
+                    return 'You are so good at compuper, i worry you may be addicted'
+                }
+                else if(quizVars.points  == 12){
+                    return 'You are linus.'
+                }
+            },
+            startFunction: ()=>{
+                quizVars.points = 0
+                quizVars.cartoonPoints = 0
+                quizVars.isPhoney = false
+            }
+        }
+    }
 }
