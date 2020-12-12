@@ -250,9 +250,9 @@ function getQuiz(quizID) {
                     functions: [
                         ()=>{quizVars.jazz = true},
                         ()=>{quizVars.points+=2;},
-                        ()=>{quizVars.points==1;},
-                        ()=>{quizVars.points==3;},
-                        ()=>{},
+                        ()=>{quizVars.points+=1;},
+                        ()=>{quizVars.points+=3;},
+                        ()=>{quizVars.points+=4;},
                 ]},
             ],
             endFunction: ()=>{
@@ -267,7 +267,7 @@ function getQuiz(quizID) {
                 } else if (quizVars.points == 3) {
                     return "I C you are the letter 'C' :))))"
                 } else if (quizVars.points == 4) {
-                    return '8=====D xdddd :D D:  you are the basis of all emoticon very default'
+                    return 'xdddd :D D:  you are the basis of all emoticon very default'
                 } else if (quizVars.points == 5) {
                     return 'YOU ARE E THE MEME AND EEEEEEEEEEEEEEEEEEEEEE'
                 } else if (quizVars.points == 6) {
