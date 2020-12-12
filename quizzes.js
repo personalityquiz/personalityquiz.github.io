@@ -115,7 +115,6 @@ function getQuiz(quizID) {
             }
         }
     }
-    
     if (quizID == "secret") {
         return {
             questions:[
@@ -185,7 +184,7 @@ function getQuiz(quizID) {
             }
         }
     }
-        if (quizID == "alphabet") {
+    if (quizID == "alphabet") {
         return {
             questions:[
                 {
@@ -392,6 +391,113 @@ function getQuiz(quizID) {
                 quizVars.points = 0
                 quizVars.cartoonPoints = 0
                 quizVars.isPhoney = false
+            }
+        }
+    }
+    if (quizID == "burgerToShrek") {
+        return {
+            questions:[
+                {
+                    question: "Main ingredient",
+                    responses: [
+                        "Beef",
+                        "Chicken",
+                        "Fish",
+                        "Vegetable"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.points += 2},
+                        ()=>{quizVars.points += 3},
+                        ()=>{quizVars.points += 4}
+                    ]},
+                {
+                    question: "Cheese?",
+                    responses: [
+                        "Lots of it",
+                        "One piece",
+                        "No",
+                    ],
+                    functions: [
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.points += 2},
+                        ()=>{quizVars.points += 3}
+                    ]},
+                {
+                    question: "Any extras?",
+                    responses: [
+                        "Onion",
+                        "Lettuce",
+                        "Pineapple",
+                        "Bacon"
+                    ],
+                    functions: [
+                        ()=>{quizVars.layers = true},
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.points += 2},
+                        ()=>{quizVars.points += 3}
+                    ]},
+                {
+                    question: "Do you want fries with that?",
+                    responses: [
+                        "Lots of them",
+                        "Some",
+                        "None"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.points += 2},
+                        ()=>{quizVars.points += 3}
+                    ]},
+                {
+                    question: "Beverage?",
+                    responses: [
+                        "None",
+                        "Lemonade",
+                        "Cola",
+                        "Orange drink",
+                        "Tea"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.points += 2},
+                        ()=>{quizVars.points += 3},
+                        ()=>{quizVars.points += 4},
+                        ()=>{quizVars.points += 5}
+                    ]},
+            ],
+            endFunction: ()=>{
+                if (quizVars.layers) {
+                    return 'You are Shrek. You have layers, just like the onions you love. Please try again if you feel that that is incorrect.'
+                } else {
+                    return 'You are ' + quizVars.options[quizVars.points]+ '. Please try again if you feel that that is incorrect.'
+                }
+                
+            },
+            startFunction: ()=>{
+                quizVars.points = 0
+                quizVars.layers = false
+                quizVars.options = [
+                    "Cheater",
+                    "Hacker",
+                    "Cheater",
+                    "Hacker",
+                    "Cheater",
+                    "Donkey",
+                    "Puss in Boots",
+                    "Pig 1 of Three Little Pigs",
+                    "Pig 2 of Three Little Pigs",
+                    "Pig 3 of Three Little Pigs",
+                    "Gingerbread Man",
+                    "Lord Farquaad",
+                    "Fairy Godmother",
+                    "Princess Fiona",
+                    "Dragon",
+                    "Pinocchio",
+                    "Mouse 1 of Three Blind Mice",
+                    "Mouse 2 of Three Blind Mice",
+                    "Shrek"
+                ]
             }
         }
     }

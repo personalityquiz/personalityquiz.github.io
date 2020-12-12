@@ -22,17 +22,21 @@ function nextQuestion() {
     }
     hasSelected = true;
     if (quiz.questions.length == 0) {
-        document.getElementById("questionBox").innerHTML = "";
-        result = quiz.endFunction()
-        document.getElementById("question").innerHTML = "Result!"
-        if (result != undefined) {
-            var endHeader = document.createElement('h2');
-            var endBox = document.createElement('p');
-            endHeader.innerHTML = "Results: " 
-            endBox.innerHTML = result 
-            document.getElementById("questionBox").appendChild(endHeader)
-            document.getElementById("questionBox").appendChild(endBox)
-        }
+        document.getElementById("questionBox").innerHTML = "<div class='loader'></div>";
+        document.getElementById("question").innerHTML = "computing result"
+        setTimeout(()=>{
+            document.getElementById("questionBox").innerHTML = "";
+            result = quiz.endFunction()
+            document.getElementById("question").innerHTML = "Result!"
+            if (result != undefined) {
+                var endHeader = document.createElement('h2');
+                var endBox = document.createElement('p');
+                endHeader.innerHTML = "Results: " 
+                endBox.innerHTML = result 
+                document.getElementById("questionBox").appendChild(endHeader)
+                document.getElementById("questionBox").appendChild(endBox)
+            }
+        },1000)
     } else {
         question = quiz.questions.shift();
         document.getElementById("question").innerHTML = question.question
