@@ -394,6 +394,237 @@ function getQuiz(quizID) {
             }
         }
     }
+    if (quizID == "alphabet") {
+        return {
+            questions:[
+                {
+                    question: "What is your favourite number",
+                    responses: [
+                        "One",
+                        "Two",
+			            "Seventy-Nine"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points++;},
+			            ()=>{quizVars.points+=2;},
+                        ()=>{}
+                ]},
+                {
+                    question: "What is your favourite bean",
+                    responses: [
+                        "True",
+                        "Purple",
+                        "A",
+                        "okay",
+                        "False"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points++;},
+                        ()=>{quizVars.points+=2;},
+                        ()=>{quizVars.points+=3;},
+                        ()=>{quizVars.points+=4;},
+                        ()=>{}
+                ]},
+                {
+                    question: "How quality is your dance moves",
+                    responses: [
+                        "Very",
+                        "Not much, but sometimes",
+                        "None at all"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points+=2;},
+                        ()=>{quizVars.points++;},
+                        ()=>{}
+                ]},
+                {
+                    question: "Yes or no",
+                    responses: [
+                        "Yes",
+                        "No"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points++;},
+                        ()=>{}
+                ]},
+		{
+                    question: "What is your opinion on alphabet",
+                    responses: [
+                        "Barry B(ee)",
+                        "FJKFHSAJKHFKJAHFKJAFHJQHAFJKHAKJHKJFHkjhkjhkfjhkjHFJKHKJ",
+                        "A",
+                        "C",
+                        "False",
+                    ],
+                    functions: [
+                        ()=>{quizVars.jazz = true},
+                        ()=>{quizVars.points+=2;},
+                        ()=>{quizVars.points+=1;},
+                        ()=>{quizVars.points+=3;},
+                        ()=>{quizVars.points+=4;},
+                ]},
+            ],
+            endFunction: ()=>{
+                if (quizVars.jazz) {
+                    return 'YOU ARE THE BARRY BEE BENSON YOU ARE COOLEST PERSON ALIVE!!'
+                } else if (quizVars.points == 0) {
+                    return 'you do not like letters blegh'
+                } else if (quizVars.points == 1) {
+                    return 'you are A. your head is pretty pointy and your headbutts heart'
+                } else if (quizVars.points == 2) {
+                    return 'meh. you are the letter B but you are not a fan of the bee movie'
+                } else if (quizVars.points == 3) {
+                    return "I C you are the letter 'C' :))))"
+                } else if (quizVars.points == 4) {
+                    return 'xdddd :D D:  you are the basis of all emoticon very default'
+                } else if (quizVars.points == 5) {
+                    return 'YOU ARE E THE MEME AND EEEEEEEEEEEEEEEEEEEEEE'
+                } else if (quizVars.points == 6) {
+                    return 'you are F, you are a very respectable person, and you pay a lot of respect to other people'
+                } else if (quizVars.points == 7) {
+                    return 'you are g. australians use you a lot'
+                } else if (quizVars.points == 8) {
+                    return 'you are h. there is a h in hi and hello but other than that you are not significant'
+                } else if (quizVars.points == 9) {
+                    return 'you are I. what the fack. how are you me!@!!!!'
+                } else if (quizVars.points == 10) {
+                    return 'you j. jojojojojojojoj'
+                } else if (quizVars.points == 11) {
+                    return 'k'
+                } else if (quizVars.points == 12) {
+                    return 'LLLLL you are verry toxic and you go LLLKLL to people'
+                } else if (quizVars.points == 13) {
+                    return 'MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM'
+                } else if (quizVars.points == 14) {
+                    return 'you are n... you are featured in top 10 n words'
+                } else if (quizVars.points == 15) {
+                    return 'O'
+                }
+            },
+            startFunction: ()=>{
+                quizVars.points = 0
+                quizVars.jazz = false
+            }
+        }
+    }
+    if (quizID == "yum"){
+        return {
+            questions:[
+                {
+                    question: "choose one of the yums",
+                    responses: [
+                        "lasagnae",
+                        "pie",
+                        "sour ice cream",
+                        "cookie"
+                    ],
+                    functions: [
+                        ()=>{quizVars.italian += 1},
+                        ()=>{quizVars.fatAmerican += 1},
+                        ()=>{quizVars.dessert += 1 },
+                        ()=>{quizVars.snack += 1}
+                    ]},
+                {
+                    question: "choose the last meal you will ever have",
+                    responses: [
+                        "a healthy salad",
+                        "mcdonalds and oily junk food",
+                        "cookies and cakes and ice cream...",
+                        "pizza"
+                    ],
+                    functions: [
+                        ()=>{quizVars.healthAddict += 1},
+                        ()=>{quizVars.fatAmerican += 1},
+                        ()=>{quizVars.snack += 1; quizVars.dessert += 1},
+                        ()=>{quizVars.italian += 1}
+                    ]},
+                {
+                    question: "food",
+                    responses: [
+                        "yummy",
+                        "I WANT IT ALL GIB GIB",
+                        "i eat the scarce minimum you fattos",
+                        "another part of life..."
+                    ],
+                    functions: [
+                        ()=>{quizVars.snack += 1},
+                        ()=>{quizVars.fatAmerican += 1},
+                        ()=>{quizVars.healthAddict += 1 },
+                        ()=>{quizVars.overall += 1}
+                    ]},
+                {
+                    question: ".",
+                    responses: [
+                        "i feel the same",
+                        "pls give me food i need it",
+                        "i want cake",
+                        "food is for survival why do people eat it for pleasure"
+                    ],
+                    functions: [
+                        ()=>{quizVars.overall += 1},
+                        ()=>{quizVars.fatAmerican += 1},
+                        ()=>{quizVars.snack += 1; quizVars.dessert += 1},
+                        ()=>{quizVars.healthAddict += 1}
+                    ]},
+
+                {
+                    question: "why is the vertical alignment of hydrospheres true to life?",
+                    responses: [
+                        "i want pasta",
+                        "cake",
+                        "you should be fit and healthy and go to the gym every day like me!",
+                        "easy! due to the collision of the multiple sepsizeisms on the micro-lons"
+                    ],
+                    functions: [
+                        ()=>{quizVars.italian += 1},
+                        ()=>{quizVars.dessert += 1},
+                        ()=>{quizVars.healthAddict += 1},
+                        ()=>{quizVars.overall += 1}
+                    ]},
+                    
+            ],
+            endFunction: ()=>{
+                var dictOfItalian = {1 : 'pasta', 2 : 'pizza', 3 : 'the holy lasagne'}
+                var dictOfHealth = {1 : 'spinach', 2 : 'banana', 3 : 'brocolli', 4 : 'you dont eat food'}
+                var dictOfFatto = {1 : 'hot chips', 2 : 'pie', 3 : 'sausages', 4 : 'oil, just oil'}
+                var dictOfSnack = {1 : 'a packet of crisps', 2 : 'cookies', 3 : 'nutrigrain'}
+                var dictOfDessert  = {1: 'cake', 2 : 'ice crean', 3 : 'pudding', 4 : 'sugar, just sugar'}
+                var tempList = [quizVars.italian, quizVars.fatAmerican, quizVars.dessert, quizVars.snack, quizVars.healthAddict, quizVars.overall]
+                var curHighest = 0;
+                for(x = 0; x < tempList.length; x++){
+                    if(tempList[x] > curHighest){
+                        curHighest = tempList[x]
+                    }
+                }
+                if(curHighest == quizVars.italian){
+                    return 'You are an italian food addict! Your ranking is ' + dictOfItalian[quizVars.italian]
+                }
+                if(curHighest == quizVars.fatAmerican){
+                    return 'You are a fat american! Your ranking is ' + dictOfFatto[quizVars.fatAmerican]
+                }
+                if(curHighest == quizVars.healthAddict){
+                    return 'You are a health addict! Your ranking is ' + dictOfHealth[quizVars.healthAddict]
+                }
+                if(curHighest == quizVars.snack){
+                    return 'You are a huge snacker! Your ranking is ' + dictOfSnack[quizVars.snack]
+                }
+                if(curHighest == quizVars.dessert){
+                    return 'You eat way too many desserts! Your ranking is ' + dictOfDessert[quizVars.dessert]
+                }
+                else{
+                    return 'you are a casual, and food is but a normality in your life'
+                }
+            },
+            startFunction: ()=>{
+                quizVars.italian = 0
+                quizVars.fatAmerican = 0
+                quizVars.dessert = 0
+                quizVars.snack = 0
+                quizVars.healthAddict = 0
+                quizVars.overall = 0
+            }
+        }
+    }
     if (quizID == "burgerToShrek") {
         return {
             questions:[
