@@ -12,7 +12,8 @@ main {
 
 section {
     border: 1px solid black;
-    padding: 30px;
+    padding: 40px;
+    margin: 30px;
     min-height: 15em;
     position: relative;
 }
@@ -86,4 +87,8 @@ body>header {
         -webkit-transform: rotate(359deg);
         transform: rotate(359deg);
     }
+}
+
+section p {
+    font-size: large;
 }
