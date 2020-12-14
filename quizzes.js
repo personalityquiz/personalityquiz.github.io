@@ -589,4 +589,125 @@ function getQuiz(quizID) {
             }
         }
     }
+    if (quizID == "numnum") {
+        return {
+            questions: [{
+                    question: "What is your favorite genre of music?",
+                    responses: [
+                        "K-POP!!!! stan Lisa? (author note: i dont watch kpop)",
+                        "Rock",
+                        "Pop",
+                        "Jazz"
+                    ],
+                    functions: [
+                        () => {},
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {
+                            quizVars.points += 3;
+                        },
+                        () => {
+                            quizVars.points += 2;
+                        },
+                    ]
+                },
+                {
+                    question: "What is your opinion on uranium?",
+                    responses: [
+                        "love it",
+                        "hate it",
+                        "titanium"
+                    ],
+                    functions: [
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {}
+                    ]
+                },
+                {
+                    question: "what do you do when sad",
+                    responses: [
+                        "Very",
+                        "Not much, but sometimes",
+                        "None at all"
+                    ],
+                    functions: [
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
+                {
+                    question: "true",
+                    responses: [
+                        "True",
+                        "False"
+                    ],
+                    functions: [
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
+                {
+                    question: "are you egotistical, narcisstical, or average",
+                    responses: [
+                        "all of the above",
+                        "there is nothing above",
+                        "GIIGLE AND HOOT?!?!?! ::DD"
+                    ],
+                    functions: [
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {
+                            quizVars.points + 2;
+                        },
+                        () => {}
+                    ]
+                },
+            ],
+            endFunction: () => {
+                if (quizVars.jazz) {
+                    return 'YOU ARE THE BARRY BEE BENSON YOU ARE COOLEST PERSON ALIVE!! wait how did youe even get this'
+                } else if (quizVars.points == 0) {
+                    return 'YOU ARE ZERO. IMAGINE BEING THIS BAD'
+                } else if (quizVars.points == 1) {
+                    return 'first the best. then we have you...'
+                } else if (quizVars.points == 2) {
+                    return 'second the worst :D'
+                } else if (quizVars.points == 3) {
+                    return 'three. nuff said'
+                } else if (quizVars.points == 4) {
+                    return 'four. you are 10 numbers too late'
+                } else if (quizVars.points == 5) {
+                    return 'you are 5. you cant decide between things....??? ha imagine being bad'
+                } else if (quizVars.points == 6) {
+                    return 'six. you are in a healthy relationship with 9'
+                } else if (quizVars.points == 7) {
+                    return 'seven. you are lucky...? idk. your lucky numbers are 7 7 6 . 7'
+                } else if (quizVars.points == 8) {
+                    return 'eight. the uncooler infinity'
+                } else if (quizVars.points == 9) {
+                    return 'nine. you are in a health relationship with 6'
+                } else if (quizVars.points == 10) {
+                    return '10'
+                }
+            },
+            startFunction: () => {
+                quizVars.points = 0
+                quizVars.jazz = false
+            }
+        }
+    }
 }
