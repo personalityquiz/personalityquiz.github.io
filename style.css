@@ -38,7 +38,7 @@ section a {
 }
 
 body > header {
-    width: 100%;
+    width: calc(100% - 1em);
     font-weight: bold;
     font-size: 200%;
     min-height: 1.5em;
@@ -85,3 +85,29 @@ body > header {
               transform: rotate(359deg);
     }
 }
+@media only screen and (min-width: 40em) {
+    /* The animation code */
+    @keyframes slideInLeft {
+        from {padding-left:20em; width: calc(100% - 20.5em); color: blue;}
+        to {padding-left:.5em; width: calc(100% - 1em); color: white;}
+    }
+      
+    /* The element to apply the animation to */
+    body > header.slideInLeft {
+        animation-name: slideInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+    /* The animation code */
+    @keyframes slideInUp {
+        from {padding-top:10em; height: calc(100% - 10em); opacity: 0;}
+        to {padding-top:0em; height: 100%; opacity: 1;}
+      }
+      
+    /* The element to apply the animation to */
+    div.slideInUp {
+        animation-name: slideInUp;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+  }
