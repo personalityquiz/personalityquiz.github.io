@@ -32,12 +32,12 @@ section p {
 section a {
     width: 100%;
     text-align: center;
-    position:absolute;
-    bottom:30px;
+    position: absolute;
+    bottom: 30px;
     right: 0;
 }
 
-body > header {
+body>header {
     width: 100%;
     font-weight: bold;
     font-size: 200%;
@@ -46,6 +46,7 @@ body > header {
     color: white;
     padding: .5em;
 }
+
 .loader {
     display: block;
     position: absolute;
@@ -58,30 +59,31 @@ body > header {
     border-top: 4px blue solid;
     border-radius: 50%;
     -webkit-animation: spin2 1s infinite linear;
-            animation: spin2 1s infinite linear;
-  }
-  
-  @-webkit-keyframes spin2 {
+    animation: spin2 1s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
     from {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      -webkit-transform: rotate(359deg);
-              transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
     }
-  }
-  @keyframes spin2 {
+}
+
+@keyframes spin2 {
     from {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      -webkit-transform: rotate(359deg);
-              transform: rotate(359deg);
-      -webkit-transform: rotate(359deg);
-              transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
     }
 }
