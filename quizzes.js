@@ -44,7 +44,7 @@ function getQuiz(quizID) {
                 return 'Your sum is ' + String(quizVars.choice1) + ' + ' + String(quizVars.choice2) + ' = ' + String(quizVars.choice1 + quizVars.choice2)
             }
         }
-    }
+    },
     startFunction: () => {
         quizVars.choice1 = 0
         quizVars.choice2 = 0
@@ -923,4 +923,5 @@ if (quizID == "numnum") {
             quizVars.jazz = false
         }
     }
+}
 }
