@@ -1,8 +1,7 @@
 function getQuiz(quizID) {
     if (quizID == "test") {
         return {
-            questions:[
-                {
+            questions: [{
                     question: "Test",
                     responses: [
                         "Test 1",
@@ -10,10 +9,17 @@ function getQuiz(quizID) {
                         "Test 3"
                     ],
                     functions: [
-                        ()=>{quizVars.choice1 = 1},
-                        ()=>{quizVars.choice1 = 2},
-                        ()=>{quizVars.choice1 = 3}
-                    ]},
+                        () => {
+                            quizVars.choice1 = 1
+                        },
+                        () => {
+                            quizVars.choice1 = 2
+                        },
+                        () => {
+                            quizVars.choice1 = 3
+                        }
+                    ]
+                },
                 {
                     question: "Test the Second",
                     responses: [
@@ -22,15 +28,22 @@ function getQuiz(quizID) {
                         "Test 6"
                     ],
                     functions: [
-                        ()=>{quizVars.choice2 = 4},
-                        ()=>{quizVars.choice2 = 5},
-                        ()=>{quizVars.choice2 = 6}
-                    ]},
+                        () => {
+                            quizVars.choice2 = 4
+                        },
+                        () => {
+                            quizVars.choice2 = 5
+                        },
+                        () => {
+                            quizVars.choice2 = 6
+                        }
+                    ]
+                },
             ],
-            endFunction: ()=>{
-                return 'Your sum is '+String(quizVars.choice1)+' + '+String(quizVars.choice2)+' = '+String(quizVars.choice1+quizVars.choice2)
+            endFunction: () => {
+                return 'Your sum is ' + String(quizVars.choice1) + ' + ' + String(quizVars.choice2) + ' = ' + String(quizVars.choice1 + quizVars.choice2)
             },
-            startFunction: ()=>{
+            startFunction: () => {
                 quizVars.choice1 = 0
                 quizVars.choice2 = 0
             }
@@ -38,17 +51,19 @@ function getQuiz(quizID) {
     }
     if (quizID == "cool-test") {
         return {
-            questions:[
-                {
+            questions: [{
                     question: "Do you like the cool sunglasses",
                     responses: [
                         "Yes they are the cool",
                         "No, they are the uncool"
                     ],
                     functions: [
-                        ()=>{quizVars.points++;},
-                        ()=>{}
-                ]},
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
                 {
                     question: "Do you consider yourself imperturbable",
                     responses: [
@@ -56,9 +71,12 @@ function getQuiz(quizID) {
                         "False"
                     ],
                     functions: [
-                        ()=>{quizVars.points++;},
-                        ()=>{}
-                ]},
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
                 {
                     question: "How quality is your dance moves",
                     responses: [
@@ -67,10 +85,15 @@ function getQuiz(quizID) {
                         "None at all"
                     ],
                     functions: [
-                        ()=>{quizVars.points+=2;},
-                        ()=>{quizVars.points++;},
-                        ()=>{}
-                ]},
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
                 {
                     question: "Do you like jazz",
                     responses: [
@@ -78,9 +101,12 @@ function getQuiz(quizID) {
                         "False"
                     ],
                     functions: [
-                        ()=>{quizVars.jazz = true},
-                        ()=>{}
-                ]},
+                        () => {
+                            quizVars.jazz = true
+                        },
+                        () => {}
+                    ]
+                },
                 {
                     question: "Are you offended by uncool person",
                     responses: [
@@ -88,11 +114,14 @@ function getQuiz(quizID) {
                         "No"
                     ],
                     functions: [
-                        ()=>{quizVars.points++;},
-                        ()=>{}
-                ]},
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
             ],
-            endFunction: ()=>{
+            endFunction: () => {
                 if (quizVars.jazz) {
                     return 'YOU ARE THE BARRY BEE BENSON YOU ARE COOLEST PERSON ALIVE!!'
                 } else if (quizVars.points == 5) {
@@ -109,7 +138,7 @@ function getQuiz(quizID) {
                     return 'Your score is 0/5. You are extremely uncool, get help from psychiatrist.'
                 }
             },
-            startFunction: ()=>{
+            startFunction: () => {
                 quizVars.points = 0
                 quizVars.jazz = false
             }
@@ -117,17 +146,19 @@ function getQuiz(quizID) {
     }
     if (quizID == "secret") {
         return {
-            questions:[
-                {
+            questions: [{
                     question: "Welcome to the secret quiz",
                     responses: [
                         "What",
                         "No let me leave please"
                     ],
                     functions: [
-                        ()=>{},
-                        ()=>{quiz.questions.shift();},
-                    ]},
+                        () => {},
+                        () => {
+                            quiz.questions.shift();
+                        },
+                    ]
+                },
                 {
                     question: "Ok now pick one of these",
                     responses: [
@@ -135,70 +166,86 @@ function getQuiz(quizID) {
                         "Let me leave",
                     ],
                     functions: [
-                        ()=>{},
-                        ()=>{},
-                    ]},
+                        () => {},
+                        () => {},
+                    ]
+                },
                 {
                     question: "Ok fine",
                     responses: [
                         "Goodbye",
                     ],
                     functions: [
-                        ()=>{},
-                    ]},
+                        () => {},
+                    ]
+                },
             ],
-            endFunction: ()=>{
+            endFunction: () => {
                 return 'You are epick hackerman'
             },
-            startFunction: ()=>{
-            }
+            startFunction: () => {}
         }
     }
     if (quizID == "age") {
         return {
-            questions:[
-                {
-                    question: "What is your age?",
-                    responses: [
-                        "0-10",
-                        "11-20",
-                        "21-30",
-                        "31-40",
-                        "41-50",
-                        "51+"
-                    ],
-                    functions: [
-                        ()=>{quizVars.choice = "0-10"},
-                        ()=>{quizVars.choice = "11-20"},
-                        ()=>{quizVars.choice = "21-30"},
-                        ()=>{quizVars.choice = "31-40"},
-                        ()=>{quizVars.choice = "41-50"},
-                        ()=>{quizVars.choice = "51+"},
-                    ]},
-            ],
-            endFunction: ()=>{
-                return 'Your age is in the range '+String(quizVars.choice)+'!<br>Please like and subscribe for more quizzes!'
+            questions: [{
+                question: "What is your age?",
+                responses: [
+                    "0-10",
+                    "11-20",
+                    "21-30",
+                    "31-40",
+                    "41-50",
+                    "51+"
+                ],
+                functions: [
+                    () => {
+                        quizVars.choice = "0-10"
+                    },
+                    () => {
+                        quizVars.choice = "11-20"
+                    },
+                    () => {
+                        quizVars.choice = "21-30"
+                    },
+                    () => {
+                        quizVars.choice = "31-40"
+                    },
+                    () => {
+                        quizVars.choice = "41-50"
+                    },
+                    () => {
+                        quizVars.choice = "51+"
+                    },
+                ]
+            }, ],
+            endFunction: () => {
+                return 'Your age is in the range ' + String(quizVars.choice) + '!<br>Please like and subscribe for more quizzes!'
             },
-            startFunction: ()=>{
+            startFunction: () => {
                 quizVars.choice = 0
             }
         }
     }
     if (quizID == "alphabet") {
         return {
-            questions:[
-                {
+            questions: [{
                     question: "What is your favourite number",
                     responses: [
                         "One",
                         "Two",
-			            "Seventy-Nine"
+                        "Seventy-Nine"
                     ],
                     functions: [
-                        ()=>{quizVars.points++;},
-			            ()=>{quizVars.points+=2;},
-                        ()=>{}
-                ]},
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {}
+                    ]
+                },
                 {
                     question: "What is your favourite bean",
                     responses: [
@@ -209,12 +256,21 @@ function getQuiz(quizID) {
                         "False"
                     ],
                     functions: [
-                        ()=>{quizVars.points++;},
-                        ()=>{quizVars.points+=2;},
-                        ()=>{quizVars.points+=3;},
-                        ()=>{quizVars.points+=4;},
-                        ()=>{}
-                ]},
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {
+                            quizVars.points += 3;
+                        },
+                        () => {
+                            quizVars.points += 4;
+                        },
+                        () => {}
+                    ]
+                },
                 {
                     question: "How quality is your dance moves",
                     responses: [
@@ -223,10 +279,15 @@ function getQuiz(quizID) {
                         "None at all"
                     ],
                     functions: [
-                        ()=>{quizVars.points+=2;},
-                        ()=>{quizVars.points++;},
-                        ()=>{}
-                ]},
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
                 {
                     question: "Yes or no",
                     responses: [
@@ -234,10 +295,13 @@ function getQuiz(quizID) {
                         "No"
                     ],
                     functions: [
-                        ()=>{quizVars.points++;},
-                        ()=>{}
-                ]},
-		{
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
+                {
                     question: "What is your opinion on alphabet",
                     responses: [
                         "Barry B(ee)",
@@ -247,14 +311,25 @@ function getQuiz(quizID) {
                         "False",
                     ],
                     functions: [
-                        ()=>{quizVars.jazz = true},
-                        ()=>{quizVars.points+=2;},
-                        ()=>{quizVars.points+=1;},
-                        ()=>{quizVars.points+=3;},
-                        ()=>{quizVars.points+=4;},
-                ]},
+                        () => {
+                            quizVars.jazz = true
+                        },
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {
+                            quizVars.points += 1;
+                        },
+                        () => {
+                            quizVars.points += 3;
+                        },
+                        () => {
+                            quizVars.points += 4;
+                        },
+                    ]
+                },
             ],
-            endFunction: ()=>{
+            endFunction: () => {
                 if (quizVars.jazz) {
                     return 'YOU ARE THE BARRY BEE BENSON YOU ARE COOLEST PERSON ALIVE!!'
                 } else if (quizVars.points == 0) {
@@ -291,16 +366,15 @@ function getQuiz(quizID) {
                     return 'O'
                 }
             },
-            startFunction: ()=>{
+            startFunction: () => {
                 quizVars.points = 0
                 quizVars.jazz = false
             }
         }
     }
-    if (quizID == "compuper"){
+    if (quizID == "compuper") {
         return {
-            questions:[
-                {
+            questions: [{
                     question: "Which one",
                     responses: [
                         "Compuper",
@@ -309,11 +383,20 @@ function getQuiz(quizID) {
                         "giggle and hoot"
                     ],
                     functions: [
-                        ()=>{quizVars.points += 4},
-                        ()=>{quizVars.isPhoney = true},
-                        ()=>{quizVars.points += 1 },
-                        ()=>{quizVars.cartoonPoints += 1}
-                    ]},
+                        () => {
+                            quizVars.points += 4
+                        },
+                        () => {
+                            quizVars.isPhoney = true
+                        },
+                        () => {
+                            quizVars.points += 1
+                        },
+                        () => {
+                            quizVars.cartoonPoints += 1
+                        }
+                    ]
+                },
                 {
                     question: "circuitboard",
                     responses: [
@@ -323,11 +406,20 @@ function getQuiz(quizID) {
                         "the wigggles"
                     ],
                     functions: [
-                        ()=>{quizVars.points += 3},
-                        ()=>{quizVars.points += 1},
-                        ()=>{quizVars.points += 4},
-                        ()=>{quizVars.cartoonPoints += 1}
-                    ]},
+                        () => {
+                            quizVars.points += 3
+                        },
+                        () => {
+                            quizVars.points += 1
+                        },
+                        () => {
+                            quizVars.points += 4
+                        },
+                        () => {
+                            quizVars.cartoonPoints += 1
+                        }
+                    ]
+                },
                 {
                     question: "why",
                     responses: [
@@ -337,37 +429,45 @@ function getQuiz(quizID) {
                         "just to suffer"
                     ],
                     functions: [
-                        ()=>{quizVars.points += 1},
-                        ()=>{quizVars.points += 4},
-                        ()=>{quizVars.cartoonPoints += 1 },
-                        ()=>{quizVars.points += 3}
-                    ]}
-            ],
-            endFunction: ()=>{
-                if(quizVars.isPhoney){
-                    return 'what a phoney imagine being a phoney...'
+                        () => {
+                            quizVars.points += 1
+                        },
+                        () => {
+                            quizVars.points += 4
+                        },
+                        () => {
+                            quizVars.cartoonPoints += 1
+                        },
+                        () => {
+                            quizVars.points += 3
+                        }
+                    ]
                 }
-                else if(quizVars.cartoonPoints > 1){
+            ],
+            endFunction: () => {
+                if (quizVars.isPhoney) {
+                    return 'what a phoney imagine being a phoney...'
+                } else if (quizVars.cartoonPoints > 1) {
                     return "I don't know what to say... try watching the dinosaur train?"
                 }
-                var numsArr = [null, 'this should be impossible... should it not?', 'COUNTRY ROADS, TAKE ME HOME... TO THE PLACE I BELONG, WEST VIRGINIA, MOUNTAIN MOMMA, TAKE ME HOME, COUNTRY ROADS!', 
-                'never gonna meme you up', 'thanks for playing! remember to like and subsrcibe' + '<br>' + 'wait i almost forgot your answer is compuper', 'Insert witty answer here: ',
-                'Yay you are 50% good at compuper!', 'you desire the bane of anime only to find that it is rubbish', 
-                'you have compuper potential kid... real potential... why dont you sign up at freecomuperinstitute?' + '\n' + '(no we didnt make a typo that was the only domain available)',
-                'You are poggest at compuper', 'You are so pog at compuper, that santa will not give you one', 'You are so good at compuper, i worry you may be addicted','You are linus.']
+                var numsArr = [null, 'this should be impossible... should it not?', 'COUNTRY ROADS, TAKE ME HOME... TO THE PLACE I BELONG, WEST VIRGINIA, MOUNTAIN MOMMA, TAKE ME HOME, COUNTRY ROADS!',
+                    'never gonna meme you up', 'thanks for playing! remember to like and subsrcibe' + '<br>' + 'wait i almost forgot your answer is compuper', 'Insert witty answer here: ',
+                    'Yay you are 50% good at compuper!', 'you desire the bane of anime only to find that it is rubbish',
+                    'you have compuper potential kid... real potential... why dont you sign up at freecomuperinstitute?' + '\n' + '(no we didnt make a typo that was the only domain available)',
+                    'You are poggest at compuper', 'You are so pog at compuper, that santa will not give you one', 'You are so good at compuper, i worry you may be addicted', 'You are linus.'
+                ]
                 return numsArr[quizVars.points]
             },
-            startFunction: ()=>{
+            startFunction: () => {
                 quizVars.points = 0
                 quizVars.cartoonPoints = 0
                 quizVars.isPhoney = false
             }
         }
     }
-    if (quizID == "yum"){
+    if (quizID == "yum") {
         return {
-            questions:[
-                {
+            questions: [{
                     question: "choose one of the yums",
                     responses: [
                         "lasagnae",
@@ -376,11 +476,20 @@ function getQuiz(quizID) {
                         "cookie"
                     ],
                     functions: [
-                        ()=>{quizVars.italian += 1},
-                        ()=>{quizVars.fatAmerican += 1},
-                        ()=>{quizVars.dessert += 1 },
-                        ()=>{quizVars.snack += 1}
-                    ]},
+                        () => {
+                            quizVars.italian += 1
+                        },
+                        () => {
+                            quizVars.fatAmerican += 1
+                        },
+                        () => {
+                            quizVars.dessert += 1
+                        },
+                        () => {
+                            quizVars.snack += 1
+                        }
+                    ]
+                },
                 {
                     question: "choose the last meal you will ever have",
                     responses: [
@@ -390,11 +499,21 @@ function getQuiz(quizID) {
                         "pizza"
                     ],
                     functions: [
-                        ()=>{quizVars.healthAddict += 1},
-                        ()=>{quizVars.fatAmerican += 1},
-                        ()=>{quizVars.snack += 1; quizVars.dessert += 1},
-                        ()=>{quizVars.italian += 1}
-                    ]},
+                        () => {
+                            quizVars.healthAddict += 1
+                        },
+                        () => {
+                            quizVars.fatAmerican += 1
+                        },
+                        () => {
+                            quizVars.snack += 1;
+                            quizVars.dessert += 1
+                        },
+                        () => {
+                            quizVars.italian += 1
+                        }
+                    ]
+                },
                 {
                     question: "food",
                     responses: [
@@ -404,11 +523,20 @@ function getQuiz(quizID) {
                         "another part of life..."
                     ],
                     functions: [
-                        ()=>{quizVars.snack += 1},
-                        ()=>{quizVars.fatAmerican += 1},
-                        ()=>{quizVars.healthAddict += 1 },
-                        ()=>{quizVars.overall += 1}
-                    ]},
+                        () => {
+                            quizVars.snack += 1
+                        },
+                        () => {
+                            quizVars.fatAmerican += 1
+                        },
+                        () => {
+                            quizVars.healthAddict += 1
+                        },
+                        () => {
+                            quizVars.overall += 1
+                        }
+                    ]
+                },
                 {
                     question: ".",
                     responses: [
@@ -418,11 +546,21 @@ function getQuiz(quizID) {
                         "food is for survival why do people eat it for pleasure"
                     ],
                     functions: [
-                        ()=>{quizVars.overall += 1},
-                        ()=>{quizVars.fatAmerican += 1},
-                        ()=>{quizVars.snack += 1; quizVars.dessert += 1},
-                        ()=>{quizVars.healthAddict += 1}
-                    ]},
+                        () => {
+                            quizVars.overall += 1
+                        },
+                        () => {
+                            quizVars.fatAmerican += 1
+                        },
+                        () => {
+                            quizVars.snack += 1;
+                            quizVars.dessert += 1
+                        },
+                        () => {
+                            quizVars.healthAddict += 1
+                        }
+                    ]
+                },
 
                 {
                     question: "why is the vertical alignment of hydrospheres true to life?",
@@ -433,46 +571,77 @@ function getQuiz(quizID) {
                         "easy! due to the collision of the multiple sepsizeisms on the micro-lons"
                     ],
                     functions: [
-                        ()=>{quizVars.italian += 1},
-                        ()=>{quizVars.dessert += 1},
-                        ()=>{quizVars.healthAddict += 1},
-                        ()=>{quizVars.overall += 1}
-                    ]},
-                    
+                        () => {
+                            quizVars.italian += 1
+                        },
+                        () => {
+                            quizVars.dessert += 1
+                        },
+                        () => {
+                            quizVars.healthAddict += 1
+                        },
+                        () => {
+                            quizVars.overall += 1
+                        }
+                    ]
+                },
+
             ],
-            endFunction: ()=>{
-                var dictOfItalian = {1 : 'pasta', 2 : 'pizza', 3 : 'the holy lasagne'}
-                var dictOfHealth = {1 : 'spinach', 2 : 'banana', 3 : 'brocolli', 4 : 'you dont eat food'}
-                var dictOfFatto = {1 : 'hot chips', 2 : 'pie', 3 : 'sausages', 4 : 'oil, just oil'}
-                var dictOfSnack = {1 : 'a packet of crisps', 2 : 'cookies', 3 : 'nutrigrain'}
-                var dictOfDessert  = {1: 'cake', 2 : 'ice crean', 3 : 'pudding', 4 : 'sugar, just sugar'}
+            endFunction: () => {
+                var dictOfItalian = {
+                    1: 'pasta',
+                    2: 'pizza',
+                    3: 'the holy lasagne'
+                }
+                var dictOfHealth = {
+                    1: 'spinach',
+                    2: 'banana',
+                    3: 'brocolli',
+                    4: 'you dont eat food'
+                }
+                var dictOfFatto = {
+                    1: 'hot chips',
+                    2: 'pie',
+                    3: 'sausages',
+                    4: 'oil, just oil'
+                }
+                var dictOfSnack = {
+                    1: 'a packet of crisps',
+                    2: 'cookies',
+                    3: 'nutrigrain'
+                }
+                var dictOfDessert = {
+                    1: 'cake',
+                    2: 'ice crean',
+                    3: 'pudding',
+                    4: 'sugar, just sugar'
+                }
                 var tempList = [quizVars.italian, quizVars.fatAmerican, quizVars.dessert, quizVars.snack, quizVars.healthAddict, quizVars.overall]
                 var curHighest = 0;
-                for(x = 0; x < tempList.length; x++){
-                    if(tempList[x] > curHighest){
+                for (x = 0; x < tempList.length; x++) {
+                    if (tempList[x] > curHighest) {
                         curHighest = tempList[x]
                     }
                 }
-                if(curHighest == quizVars.italian){
+                if (curHighest == quizVars.italian) {
                     return 'You are an italian food addict! Your ranking is ' + dictOfItalian[quizVars.italian]
                 }
-                if(curHighest == quizVars.fatAmerican){
+                if (curHighest == quizVars.fatAmerican) {
                     return 'You are a fat american! Your ranking is ' + dictOfFatto[quizVars.fatAmerican]
                 }
-                if(curHighest == quizVars.healthAddict){
+                if (curHighest == quizVars.healthAddict) {
                     return 'You are a health addict! Your ranking is ' + dictOfHealth[quizVars.healthAddict]
                 }
-                if(curHighest == quizVars.snack){
+                if (curHighest == quizVars.snack) {
                     return 'You are a huge snacker! Your ranking is ' + dictOfSnack[quizVars.snack]
                 }
-                if(curHighest == quizVars.dessert){
+                if (curHighest == quizVars.dessert) {
                     return 'You eat way too many desserts! Your ranking is ' + dictOfDessert[quizVars.dessert]
-                }
-                else{
+                } else {
                     return 'you are a casual, and food is but a normality in your life'
                 }
             },
-            startFunction: ()=>{
+            startFunction: () => {
                 quizVars.italian = 0
                 quizVars.fatAmerican = 0
                 quizVars.dessert = 0
@@ -484,8 +653,7 @@ function getQuiz(quizID) {
     }
     if (quizID == "burgerToShrek") {
         return {
-            questions:[
-                {
+            questions: [{
                     question: "Main ingredient",
                     responses: [
                         "Beef",
@@ -494,11 +662,20 @@ function getQuiz(quizID) {
                         "Vegetable"
                     ],
                     functions: [
-                        ()=>{quizVars.points += 1},
-                        ()=>{quizVars.points += 2},
-                        ()=>{quizVars.points += 3},
-                        ()=>{quizVars.points += 4}
-                    ]},
+                        () => {
+                            quizVars.points += 1
+                        },
+                        () => {
+                            quizVars.points += 2
+                        },
+                        () => {
+                            quizVars.points += 3
+                        },
+                        () => {
+                            quizVars.points += 4
+                        }
+                    ]
+                },
                 {
                     question: "Cheese?",
                     responses: [
@@ -507,10 +684,17 @@ function getQuiz(quizID) {
                         "No",
                     ],
                     functions: [
-                        ()=>{quizVars.points += 1},
-                        ()=>{quizVars.points += 2},
-                        ()=>{quizVars.points += 3}
-                    ]},
+                        () => {
+                            quizVars.points += 1
+                        },
+                        () => {
+                            quizVars.points += 2
+                        },
+                        () => {
+                            quizVars.points += 3
+                        }
+                    ]
+                },
                 {
                     question: "Any extras?",
                     responses: [
@@ -520,11 +704,20 @@ function getQuiz(quizID) {
                         "Bacon"
                     ],
                     functions: [
-                        ()=>{quizVars.layers = true},
-                        ()=>{quizVars.points += 1},
-                        ()=>{quizVars.points += 2},
-                        ()=>{quizVars.points += 3}
-                    ]},
+                        () => {
+                            quizVars.layers = true
+                        },
+                        () => {
+                            quizVars.points += 1
+                        },
+                        () => {
+                            quizVars.points += 2
+                        },
+                        () => {
+                            quizVars.points += 3
+                        }
+                    ]
+                },
                 {
                     question: "Do you want fries with that?",
                     responses: [
@@ -533,10 +726,17 @@ function getQuiz(quizID) {
                         "None"
                     ],
                     functions: [
-                        ()=>{quizVars.points += 1},
-                        ()=>{quizVars.points += 2},
-                        ()=>{quizVars.points += 3}
-                    ]},
+                        () => {
+                            quizVars.points += 1
+                        },
+                        () => {
+                            quizVars.points += 2
+                        },
+                        () => {
+                            quizVars.points += 3
+                        }
+                    ]
+                },
                 {
                     question: "Beverage?",
                     responses: [
@@ -547,22 +747,33 @@ function getQuiz(quizID) {
                         "Tea"
                     ],
                     functions: [
-                        ()=>{quizVars.points += 1},
-                        ()=>{quizVars.points += 2},
-                        ()=>{quizVars.points += 3},
-                        ()=>{quizVars.points += 4},
-                        ()=>{quizVars.points += 5}
-                    ]},
+                        () => {
+                            quizVars.points += 1
+                        },
+                        () => {
+                            quizVars.points += 2
+                        },
+                        () => {
+                            quizVars.points += 3
+                        },
+                        () => {
+                            quizVars.points += 4
+                        },
+                        () => {
+                            quizVars.points += 5
+                        }
+                    ]
+                },
             ],
-            endFunction: ()=>{
+            endFunction: () => {
                 if (quizVars.layers) {
                     return 'You are Shrek. You have layers, just like the onions you love. Please try again if you feel that that is incorrect.'
                 } else {
-                    return 'You are ' + quizVars.options[quizVars.points]+ '. Please try again if you feel that that is incorrect.'
+                    return 'You are ' + quizVars.options[quizVars.points] + '. Please try again if you feel that that is incorrect.'
                 }
-                
+
             },
-            startFunction: ()=>{
+            startFunction: () => {
                 quizVars.points = 0
                 quizVars.layers = false
                 quizVars.options = [
@@ -586,6 +797,127 @@ function getQuiz(quizID) {
                     "Mouse 2 of Three Blind Mice",
                     "Shrek"
                 ]
+            }
+        }
+    }
+    if (quizID == "numnum") {
+        return {
+            questions: [{
+                    question: "What is your favorite genre of music?",
+                    responses: [
+                        "K-POP!!!! stan Lisa? (author note: i dont watch kpop)",
+                        "Rock",
+                        "Pop",
+                        "Jazz"
+                    ],
+                    functions: [
+                        () => {},
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {
+                            quizVars.points += 3;
+                        },
+                        () => {
+                            quizVars.points += 2;
+                        },
+                    ]
+                },
+                {
+                    question: "What is your opinion on uranium?",
+                    responses: [
+                        "love it",
+                        "hate it",
+                        "titanium"
+                    ],
+                    functions: [
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {}
+                    ]
+                },
+                {
+                    question: "what do you do when sad",
+                    responses: [
+                        "Very",
+                        "Not much, but sometimes",
+                        "None at all"
+                    ],
+                    functions: [
+                        () => {
+                            quizVars.points += 2;
+                        },
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
+                {
+                    question: "true",
+                    responses: [
+                        "True",
+                        "False"
+                    ],
+                    functions: [
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {}
+                    ]
+                },
+                {
+                    question: "are you egotistical, narcisstical, or average",
+                    responses: [
+                        "all of the above",
+                        "there is nothing above",
+                        "GIIGLE AND HOOT?!?!?! ::DD"
+                    ],
+                    functions: [
+                        () => {
+                            quizVars.points++;
+                        },
+                        () => {
+                            quizVars.points + 2;
+                        },
+                        () => {}
+                    ]
+                },
+            ],
+            endFunction: () => {
+                if (quizVars.jazz) {
+                    return 'YOU ARE THE BARRY BEE BENSON YOU ARE COOLEST PERSON ALIVE!! wait how did youe even get this'
+                } else if (quizVars.points == 0) {
+                    return 'YOU ARE ZERO. IMAGINE BEING THIS BAD'
+                } else if (quizVars.points == 1) {
+                    return 'first the best. then we have you...'
+                } else if (quizVars.points == 2) {
+                    return 'second the worst :D'
+                } else if (quizVars.points == 3) {
+                    return 'three. nuff said'
+                } else if (quizVars.points == 4) {
+                    return 'four. you are 10 numbers too late'
+                } else if (quizVars.points == 5) {
+                    return 'you are 5. you cant decide between things....???'
+                } else if (quizVars.points == 6) {
+                    return 'six. you are in a healthy relationship with 9'
+                } else if (quizVars.points == 7) {
+                    return 'seven. you are lucky...? idk. your lucky numbers are 7 7 6 . 7'
+                } else if (quizVars.points == 8) {
+                    return 'eight. the uncooler infinity'
+                } else if (quizVars.points == 9) {
+                    return 'nine. you are in a health relationship with 6'
+                } else if (quizVars.points == 10) {
+                    return '10'
+                }
+            },
+            startFunction: () => {
+                quizVars.points = 0
+                quizVars.jazz = false
             }
         }
     }
