@@ -5,6 +5,9 @@ var hasSelected = false;
 var question = {}
 var quiz = getQuiz(quizID)
 var quizVars = {}
+document.getElementById("questionBox").classList.toggle("slideInUp")
+void document.getElementById("questionBox").offsetWidth;
+document.getElementById("question").classList.toggle("slideInLeft")
 function nextQuestion() {
     if (hasSelected) {
         let selectedValue = undefined;
@@ -41,6 +44,15 @@ function nextQuestion() {
         question = quiz.questions.shift();
         document.getElementById("question").innerHTML = question.question
         document.getElementById("questionBox").innerHTML = "";
+
+        document.getElementById("questionBox").classList.toggle("slideInUp");
+        void document.getElementById("questionBox").offsetWidth;
+        document.getElementById("questionBox").classList.toggle("slideInUp");
+
+        document.getElementById("question").classList.toggle("slideInLeft");
+        void document.getElementById("question").offsetWidth;
+        document.getElementById("question").classList.toggle("slideInLeft");
+
         for (let i = 0; i < question.responses.length; i++) {
             var radiobox = document.createElement('input');
             radiobox.type = 'radio';
