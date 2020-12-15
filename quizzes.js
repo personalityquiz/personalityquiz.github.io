@@ -710,6 +710,89 @@ function getQuiz(quizID) {
             }
         }
     }
+    if (quizID == "fruit") {
+        return {
+            questions:[
+                {
+                    question: "Are beans the fruit?",
+                    responses: [
+                        "Yes, they are the fruit",
+                        "No, they are not the fruit"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points++;},
+                        ()=>{}
+                ]},
+                {
+                    question: "Do you eat the berries or the citruses?",
+                    responses: [
+                        "True",
+                        "False"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points++;},
+                        ()=>{}
+                ]},
+                {
+                    question: "How sweet do you like the fruit?",
+                    responses: [
+                        "Very",
+                        "Not much, but sometimes",
+                        "None at all"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points+=2;},
+                        ()=>{quizVars.points++;},
+                        ()=>{}
+                ]},
+                {
+                    question: "What music do you listen to when you eat the fruit?",
+                    responses: [
+                        "Jazz",
+                        "Rock",
+                        "Rickroll"
+                    ],
+                    functions: [
+                        ()=>{quizVars.jazz = true},
+                        ()=>{},
+                        ()=>{}
+                ]},
+                {
+                    question: "Are you ranga (if unsure, feel free to take our <a href='quiz.html?quiz=ranga'>ranga test</a> today)",
+                    responses: [
+                        "No, I'm Adam",
+                        "Yes",
+                        "No"
+                    ],
+                    functions: [
+                        ()=>{},
+                        ()=>{quizVars.points++;},
+                        ()=>{quizVars.points++;}
+                ]},
+            ],
+            endFunction: ()=>{
+                if (quizVars.jazz) {
+                    return 'YOU ARE THE BARRY BEE BENSON YOU ARE COOLEST PERSON ALIVE!!'
+                } else if (quizVars.points == 5) {
+                    return 'Your score is 5/5. You are the strawberry which is ranga fruit funy'
+                } else if (quizVars.points == 4) {
+                    return 'Your score is 4/5. You are the orange which is kind of ranga fruit ngl'
+                } else if (quizVars.points == 3) {
+                    return 'Your score is 3/5. You are the apple.'
+                } else if (quizVars.points == 2) {
+                    return 'Your score is 2/5. You are the kiwifruit and you taste the uncool'
+                } else if (quizVars.points == 1) {
+                    return 'Your score is 1/5. You are the tomato so not really the fruit'
+                } else if (quizVars.points == 0) {
+                    return 'You are the veggietable UGH GROSS get better at fruit.'
+                }
+            },
+            startFunction: ()=>{
+                quizVars.points = 0
+                quizVars.jazz = false
+            }
+        }
+    }
     if (quizID == "ranga") {
         return {
             questions:[
