@@ -758,16 +758,16 @@ function getQuiz(quizID) {
                         ()=>{}
                 ]},
                 {
-                    question: "Are you ranga (if unsure, feel free to take our <a href='quiz.html?quiz=ranga'>ranga test</a>today)",
+                    question: "Are you ranga (if unsure, feel free to take our <a href='quiz.html?quiz=ranga'>ranga test</a> today)",
                     responses: [
                         "No, I'm Adam",
                         "Yes",
                         "No"
                     ],
                     functions: [
+                        ()=>{},
                         ()=>{quizVars.points++;},
-                        ()=>{quizVars.points++;},
-                        ()=>{}
+                        ()=>{quizVars.points++;}
                 ]},
             ],
             endFunction: ()=>{
