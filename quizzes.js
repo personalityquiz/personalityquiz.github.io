@@ -710,4 +710,95 @@ function getQuiz(quizID) {
             }
         }
     }
+    if (quizID == "ranga") {
+        return {
+            questions:[
+                {
+                    question: "Are you gay?",
+                    responses: [
+                        "yes",
+                        "no",
+                        "what is a gay"
+                    ],
+                    functions: [
+                        ()=>{quizVars.gay += 1},
+                        ()=>{quizVars.ranga += 1},
+                        ()=>{quizVars.points += 1},
+                    ]},
+                {
+                    question: "what colour is your hair?",
+                    responses: [
+                        "black or blonde or brown",
+                        "red",
+                        "ginger",
+                    ],
+                    functions: [
+                        ()=>{quizVars.ranga += 3},
+                        ()=>{quizVars.ranga += 1},
+                        ()=>{quizVars.ranga += 3}
+                    ]},
+                {
+                    question: "does your name start with 'a'?",
+                    responses: [
+                        "yes",
+                        "no",
+                    ],
+                    functions: [
+                        ()=>{quizVars.ranga += 1},
+                        ()=>{quizVars.ranga += 1},
+                    ]},
+                {
+                    question: "why is red = dead?",
+                    responses: [
+                        "leeuwin harness",
+                        "because ranga bad",
+                        "the mast on the leeuwin is red"
+                    ],
+                    functions: [
+                        ()=>{quizVars.boatKnol += 1},
+                        ()=>{quizVars.points += 2},
+                        ()=>{quizVars.points += 3}
+                    ]},
+                {
+                    question: "The",
+                    responses: [
+                        "dot",
+                        "i am a ranga",
+                        "i am not a ranga",
+                        "i am neutral",
+                        "Tea",
+                        "me too"
+                    ],
+                    functions: [
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.ranga += 2},
+                        ()=>{quizVars.ranga += 3},
+                        ()=>{quizVars.points += 1},
+                        ()=>{quizVars.boatKnol += 1},
+                        ()=>{quizVars.gay += 1}
+                    ]},
+            ],
+            endFunction: ()=>{
+                if(quizVars.boatKnol > 1){
+                    return 'you are not a ranga!'
+                }
+                else if(quizVars.ranga > 2){
+                    return 'you are a blooming 100% totalitarian ranga'
+                }
+                else if(quizVars.gay > 1){
+                    return "gay? that's what you are!"
+                }
+                else{
+                    return 'neutrality... that is your way'
+                }
+            
+            },
+            startFunction: ()=>{
+                quizVars.points = 0
+                quizVars.ranga = 0
+                quizVars.gay = 0
+                quizVars.boatKnol = 0
+            }
+        }
+    }
 }
