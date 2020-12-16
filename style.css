@@ -46,6 +46,11 @@ body > header {
   color: white;
   padding: 0.5em;
 }
+
+body > header a {
+    color: white;
+    color: skyblue;
+}
 .loader {
   display: block;
   position: absolute;
