@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 body {
   font-family: "Open Sans", sans-serif;
+}
+
+.dark-mode {
   background-color:#2C2F33;
   color: white;
 }
-a {
-  color: #7289DA;
-}
+
 main {
   display: inline-grid;
   width: 100%;
@@ -16,6 +17,7 @@ main {
 
 section {
   border: 1px solid black;
+  border-radius: 10px;
   padding: 30px;
   min-height: 15em;
   position: relative;
@@ -46,7 +48,7 @@ body > header {
   font-weight: bold;
   font-size: 200%;
   min-height: 1.5em;
-  background-color:#99AAB5;
+  background-color: blue;
   color: white;
   padding: 0.5em;
 }
@@ -64,7 +66,7 @@ body > header a {
   width: 50px;
   margin: -25px 0 0 -25px;
   border: 4px lightgray solid;
-  border-top: 4px #99AAB5;
+  border-top: 4px blue solid;
   border-radius: 50%;
   -webkit-animation: spin2 1s infinite linear;
   animation: spin2 1s infinite linear;
@@ -100,7 +102,7 @@ body > header a {
     from {
       padding-left: 20em;
       width: calc(100% - 20.5em);
-      color: #99AAB5;
+      color: blue;
     }
     to {
       padding-left: 0.5em;
