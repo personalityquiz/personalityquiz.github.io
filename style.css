@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: black;
+  color: white;
 }
 
 main {
@@ -11,7 +15,7 @@ main {
 }
 
 section {
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 30px;
   min-height: 15em;
   position: relative;
@@ -42,7 +46,7 @@ body > header {
   font-weight: bold;
   font-size: 200%;
   min-height: 1.5em;
-  background-color: blue;
+  background-color: green;
   color: white;
   padding: 0.5em;
 }
@@ -96,7 +100,7 @@ body > header a {
     from {
       padding-left: 20em;
       width: calc(100% - 20.5em);
-      color: blue;
+      color: green;
     }
     to {
       padding-left: 0.5em;
