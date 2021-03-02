@@ -7,6 +7,11 @@ body {
   color: white;
 }
 
+.dark-mode {
+  background-color:#2C2F33;
+  color: white;
+}
+
 main {
   display: inline-grid;
   width: 100%;
@@ -16,6 +21,8 @@ main {
 
 section {
   border: 1px solid white;
+  border: 1px solid black;
+  border-radius: 10px;
   padding: 30px;
   min-height: 15em;
   position: relative;
