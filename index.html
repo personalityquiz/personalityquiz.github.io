@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personality Quiz</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
 </head>
-<body>
+<body id="body">
     <h1>Personality quiz</h1>
     <p>This is the website that will have the quizzes that you will enjoy. We add the quizzes every sometimes.</p>
+    <button id="themeButton" onclick="changeTheme()" style="border-radius: 5px;">Change to Dark Theme</button>
     <main>
         <section>
             <header>
@@ -23,6 +25,13 @@
             </header>
             <p>what fruit are you? Find out what fruit you should nomnom today (submitted by Olive)</p>
             <a href="quiz.html?quiz=fruit">take the fruit Test</a>
+        </section>
+        <section>
+            <header>
+                Are you a Psychopath?
+            </header>
+            <p>Stabbing noises</p>
+            <a href="quiz.html?quiz=psychopath-test">Play psycho test</a>
         </section>
         <section>
             <header>
