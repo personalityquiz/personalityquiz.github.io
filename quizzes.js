@@ -1469,7 +1469,7 @@ function getQuiz(quizID) {
         },
       ],
       endFunction: () => {
-        if (quizVars.isFroggeEnding) {
+        if (quizVars.isFroggeEnding && quizVars.points != 1234) {
           return "you've found yourself in a magical place without visible characters"
         } else if (quizVars.points < 0) {
           return "poggerino";
