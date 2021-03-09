@@ -359,7 +359,7 @@ function getQuiz(quizID) {
           responses: ["Just to suffer", "This is fun", "No, I don't think I will"],
           functions: [
             () => {
-              quizVars.points += 2;
+              quizVars.funy = true;
             },
             () => {
               quizVars.points++;
@@ -391,18 +391,18 @@ function getQuiz(quizID) {
       endFunction: () => {
         if (quizVars.psycho) {
           return "YOU ARE THE MURERDERRER YOU ARE MOST SCARY PSYCHOMAN ALIVE!!";
-        } else if (quizVars.gay) {
-          return "Your score is 5/5. You are one of the coolest person around.";
+        } else if (quizVars.funy) {
+          return "You are so funy you know the meme ahahahaha lmao";
         } else if (quizVars.points == 4) {
-          return "Your score is 4/5. You are cool, but not the coolest";
+          return "Your score is 4/5. You are cool, and not a psycho";
         } else if (quizVars.points == 3) {
-          return "Your score is 3/5. You are average coolness.";
+          return "Your score is 3/5. You are normal human being";
         } else if (quizVars.points == 2) {
-          return "Your score is 2/5. You are not very cool. Consider taking coolness class.";
+          return "Your score is 2/5. You aren't a psychopath, but you might be a sociopath.";
         } else if (quizVars.points == 1) {
-          return "Your score is 1/5. You are uncool full stop. Get cooler, please.";
+          return "Your score is 1/5. We still have no idea what you are lol";
         } else if (quizVars.points == 0) {
-          return "Your score is 0/5. You are extremely uncool, get help from psychiatrist.";
+          return "Your score is 0/5. What's this test about again?";
         }
       },
       startFunction: () => {
