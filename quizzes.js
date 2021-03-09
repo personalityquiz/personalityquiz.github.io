@@ -1153,4 +1153,342 @@ function getQuiz(quizID) {
       },
     };
   }
+  if (quizID == "stinky") {
+    return {
+      questions: [
+        {
+          question: "Fortnite",
+          responses: ["sometimes", 
+                      "fortnite bad",
+                      "3", 
+                      "i respect people's choice in games", ],
+          functions: [
+            () => {
+              quizVars.points+=2;
+            },
+            () => {
+              quizVars.points++;
+            },
+            () => {
+              quizVars.points+=10;
+            },
+            () => {
+              quizVars.points+=100;
+            },
+          ],
+        },
+        {
+          question: "who is joe",
+          responses: ["Jonathan cena", 
+                      "Rock the dwayne johnson",
+                      "Barry b bensun", ],
+          functions: [
+            () => {
+              quizVars.points+=20;
+            },
+            () => {
+              quizVars.points+=10;
+            },
+            () => {
+              quizVars.points+=3;
+            },
+          ],
+        },
+        {
+          question: "do you like pineapple on pizza",
+          responses: ["false", 
+                      "25-30 years old",
+                      "not a", ],
+          functions: [
+            () => {
+              quizVars.points+=1;
+            },
+            () => {
+              quizVars.points+=5;
+            },
+            () => {
+              quizVars.points+=100;
+            },
+          ],
+        },
+        {
+          question: "hello",
+          responses: ["correct, a+", 
+                      "yes",
+                      "hello", ],
+          functions: [
+            () => {
+              quizVars.points+=0;
+            },
+            () => {
+              quizVars.points+=2;
+            },
+            () => {
+              quizVars.points+=100;
+            },
+          ],
+        },
+        {
+          question: "what is 2+2",
+          responses: ["22", 
+                      "4",
+                      "fish", 
+                      ""],
+          functions: [
+            () => {
+              quizVars.points+=2;
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.points+=1;
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.points+=100;
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.points = 1000;
+              quizVars.isFroggeEnding = true;
+            }
+          ],
+        },
+        {
+          question: "",
+          responses: ["d", 
+                      "e",
+                      "f", 
+                      "g",
+                      "h"],
+          functions: [
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points+=200;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+          ],
+        },
+        {
+          question: "",
+          responses: ["p", 
+                      "q",
+                      "r", 
+                      "s",
+                      "t"],
+          functions: [
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points+=30;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+          ],
+        },
+        {
+          question: "",
+          responses: ["l", 
+                      "m",
+                      "n", 
+                      "o",
+                      "p"],
+          functions: [
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points+=1;
+            },
+            () => {
+              quizVars.points=0;
+            },
+          ],
+        },
+        {
+          question: "",
+          responses: ["g", 
+                      "h",
+                      "i", 
+                      "j",
+                      "k"],
+          functions: [
+            () => {
+              quizVars.points+=1;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+          ],
+        },
+        {
+          question: "",
+          responses: ["c", 
+                      "d",
+                      "e", 
+                      "f",
+                      "g"],
+          functions: [
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points=0;
+            },
+            () => {
+              quizVars.points+=1;
+            },
+          ],
+        },
+        {
+          question: "",
+          responses: ["a", 
+                      "b",
+                      "c", 
+                      "d",
+                      "e"],
+          functions: [
+            () => {
+              quizVars.points=0;
+              quiz.questions.shift();
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.points=0;
+              quiz.questions.shift();
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.points=0;
+              quiz.questions.shift();
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.points=0;
+              quiz.questions.shift();
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.points+=1;
+              quiz.questions.shift();
+              quiz.questions.shift();
+            },
+          ],
+        },
+        {
+          question: "poggers?",
+          responses: ["pog", 
+                      "not pog",
+                      "Ryan Gutierrez", ],
+          functions: [
+            () => {
+              quizVars.points+=10;
+            },
+            () => {
+              quizVars.points+=1;
+            },
+            () => {
+              quizVars.points+=100;
+            },
+          ],
+        },
+        {
+          question: "what letter",
+          responses: ["triangle", 
+                      "72",
+                      "a",
+                      "corn" ],
+          functions: [
+            () => {
+              quizVars.points+=10;
+            },
+            () => {
+              quizVars.points+=3;
+            },
+            () => {
+              quizVars.points+=150;
+            },
+            () => {
+              if (Math.random() < 0.01) {
+                quizVars.points+=10;
+              } else {
+                quizVars.points-=1000000;
+              }
+            },
+          ],
+        },
+      ],
+      endFunction: () => {
+        if (quizVars.isFroggeEnding) {
+          return "you've found yourself in a magical place without visible characters"
+        } else if (quizVars.points < 0) {
+          return "poggerino";
+        } else if (quizVars.points < 10) {
+          return "ooga booga you are the stinky man of the stinky kind";
+        } else if (quizVars.points < 20) {
+          return "you are a stinky but not very";
+        } else if (quizVars.points < 50) {
+          return "not very stinky you are the meh man ekcs dee";
+        } else if (quizVars.points != 1234) {
+          return "you are the epic of the cool";
+        } else {
+          return "congratulations you got the secret ending";
+        }
+      },
+      startFunction: () => {
+        quizVars.points = 0;
+        quizVars.isFroggeEnding = false;
+      },
+    };
+  }
 }

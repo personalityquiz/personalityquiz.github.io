@@ -7,11 +7,6 @@ body {
   color: white;
 }
 
-.dark-mode {
-  background-color:#2C2F33;
-  color: white;
-}
-
 main {
   display: inline-grid;
   width: 100%;
