@@ -1494,4 +1494,112 @@ function getQuiz(quizID) {
       },
     };
   }
+  if (quizID == "sus") {
+    return {
+      questions: [
+        {
+          question: "Did you do the task",
+          responses: ["Yes I did do the task", "I did the task in electric","Why is my name red"],
+          functions: [
+            () => {
+            },
+            () => {
+              quizVars.points++;
+            },
+            () => {
+              quizVars.sus = true;
+              for (let i=0; i < quiz.questions.length; i++) {
+                quiz.questions[i].question = "Sus";
+                for (let j=0; j < quiz.questions[i].responses.length; j++) {
+                  quiz.questions[i].responses[j] = "Sus"
+                }
+                for (let j=0; j < quiz.questions[i].functions.length; j++) {
+                  quiz.questions[i].functions[j] = () => {}
+                }
+              }
+            },
+          ],
+        },
+        {
+          question: "Who do you trust",
+          responses: ["Red (you saw them vent)", "Green (did nothing)"],
+          functions: [
+            () => {},
+            () => {
+              quizVars.points++;
+            },
+          ],
+        },
+        {
+          question: "Which task do you do",
+          responses: ["Electric", "Trash", "Medical bay"],
+          functions: [
+            () => {
+              quizVars.points++;
+            },
+            () => {
+            },
+            () => {
+              quizVars.points--;
+            },
+          ],
+        },
+        {
+          question: "Discussion time",
+          responses: ["I saw red vent", "Orange looks sus", "我正在玩第五身份，喜欢玩游戏吗？","I need to get pizza"],
+          functions: [
+            () => {quizVars.points--;},
+            () => {quizVars.points++;},
+            () => {quizVars.identity = true;},
+            () => {},
+          ],
+        },
+        {
+          question: "They want to eject you",
+          responses: ["Yes", "No"],
+          functions: [
+            () => {quizVars.points++;},
+            () => {},
+          ],
+        },
+      ],
+      endFunction: () => {
+        if (quizVars.sus) {
+          return "SUS";
+        }
+        if (quizVars.identity) {
+          return "I'm playing Identity V, fancy a game?";
+        }
+        if (quizVars.points == -2) {
+          return "You stay on the ship, and the crew wins."
+        }
+        if (quizVars.points == -1) {
+          return "You stay on the ship, but the crew dies!"
+        }
+        if (quizVars.points == 0) {
+          return "Everyone disconnects and the game ends."
+        }
+        if (quizVars.points == 1) {
+          return "Everyone thinks you are a bit sus, but eject red."
+        }
+        if (quizVars.points == 2) {
+          return "You are kind of sus, so you are ejected just to be sure."
+        }
+        if (quizVars.points == 3) {
+          return "Pretty sus, but impostor backs you up."
+        }
+        if (quizVars.points == 4) {
+          return "You are ejected, but everyone is surprised that you are not impostor."
+        }
+        if (quizVars.points == 5) {
+          return "You are impostor. You lose."
+        }
+      },
+      startFunction: () => {
+        quizVars.points = 0;
+        quizVars.sus = false;
+        quizVars.identity = false;
+      },
+    };
+  }
 }
