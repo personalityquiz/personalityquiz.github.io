@@ -1242,6 +1242,7 @@ function getQuiz(quizID) {
               quiz.questions.shift();
               quiz.questions.shift();
               quiz.questions.shift();
+              quiz.questions.shift();
             },
             () => {
               quizVars.points+=1;
@@ -1250,9 +1251,11 @@ function getQuiz(quizID) {
               quiz.questions.shift();
               quiz.questions.shift();
               quiz.questions.shift();
+              quiz.questions.shift();
             },
             () => {
               quizVars.points+=100;
+              quiz.questions.shift();
               quiz.questions.shift();
               quiz.questions.shift();
               quiz.questions.shift();
