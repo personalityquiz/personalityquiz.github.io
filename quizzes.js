@@ -1462,7 +1462,7 @@ function getQuiz(quizID) {
               quizVars.points+=150;
             },
             () => {
-              if (Math.random() < 0.01) {
+              if (Math.random() < 0.50) {
                 quizVars.points+=10;
               } else {
                 quizVars.points-=1000000;
