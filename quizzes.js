@@ -1602,4 +1602,349 @@ function getQuiz(quizID) {
       },
     };
   }
+  if (quizID == "richtest") {
+    return {
+      questions: [
+        {
+          question: "What chips",
+          responses: ["Normal", "Fancy", "Posh posh chips", "I am too poor to buy chips :("],
+          functions: [
+            () => {
+              quizVars.dollars += 10;
+            },
+            () => {
+              quizVars.dollars += 25;
+            },
+            () => {
+              quizVars.dollars += 50;
+            },
+            () => {
+              quizVars.dollars -= 10;
+            },
+          ],
+        },
+        {
+          question: "Beans?",
+          responses: ["Bean is expense", "I can afford all the beans", "I hate beans"],
+          functions: [
+            () => {
+              quizVars.dollars -= 20;
+            },
+            () => {
+              quizVars.dollars += 5;
+            },
+            () => {
+              quizVars.hatesBeans = true;
+              quizVars.cool -= 999;
+            },
+          ],
+        },
+        {
+          question: "What do you get around in",
+          responses: ["Bus", "Car", "Yacht", "Bike", "Walk"],
+          functions: [
+            () => {
+              quizVars.dollars += 5;
+            },
+            () => {
+              quizVars.dollars += 25;
+            },
+            () => {
+              quizVars.dollars += 100;
+            },
+            () => {
+              quizVars.dollars += 15;
+            },
+            () => {
+              quizVars.dollars -= 5;
+            }
+          ],
+        },
+        {
+          question: "How does the mafia work",
+          responses: ["I run the mafia", "I was robbed by the mafia", "Level 100 mafia boss"],
+          functions: [
+            () => {
+              quizVars.dollars += 25;
+            },
+            () => {
+              quizVars.dollars -= 20;
+            },
+            () => {
+              quizVars.dollars += 50;
+            },
+          ],
+        },
+        {
+          question: "What computer do you have",
+          responses: ["Potato", "RTX 3080 extreme gamer", "Laptop", "Windows xp"],
+          functions: [
+            () => {
+              quizVars.dollars -= 20;
+            },
+            () => {
+              quizVars.dollars += 150;
+            },
+            () => {
+              quizVars.dollars += 15;
+            },
+            () => {
+              quizVars.dollars += 5;
+            },
+          ],
+        },
+        {
+          question: "Tea?",
+          responses: ["Yes", "No"],
+          functions: [
+            () => {
+              quizVars.cool += 1;
+            },
+            () => {
+              quizVars.dollars -= 10;
+            },
+          ],
+        },
+        {
+          question: "Are you ranga? If unsure please take our ranga test",
+          responses: ["Yes", "No"],
+          functions: [
+            () => {
+              quizVars.dollars -= 10;
+              quiz.questions.shift();
+            },
+            () => {
+              
+            },
+          ],
+        },
+        {
+          question: "Does your name start with Ada?",
+          responses: ["Yes", "No"],
+          functions: [
+            () => {
+              quizVars.dollars -= 9999;
+            },
+            () => {
+              quizVars.dollars += 5;
+            },
+          ],
+        },
+        {
+          question: "We will now simulate discussion with doctor",
+          responses: ["Oh cool"],
+          functions: [
+            () => {
+              
+            },
+          ],
+        },
+        {
+          question: "Hello what illness do you have",
+          responses: ["Broken leg", "Cancer"],
+          functions: [
+            () => {
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.dead = true;
+              quizVars.cause = "cancer";
+            },
+          ],
+        },
+        {
+          question: "You die",
+          responses: ["Oh"],
+          functions: [
+            () => {
+              quiz.questions = []
+            },
+          ],
+        },
+        {
+          question: "Ok that must hurt now we will fix it.",
+          responses: ["Ok"],
+          functions: [
+            () => {
+              
+            },
+          ],
+        },
+        {
+          question: "Ok it is fixed it costs $9999",
+          responses: ["I can't pay that", "I can pay that", "I will take a loan"],
+          functions: [
+            () => {
+              quizVars.dead = true;
+              quizVars.cause = "doctor";
+            },
+            () => {
+              quizVars.dollars += 50;
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.dollars -= 50;
+              quiz.questions.shift();
+            },
+          ],
+        },
+        {
+          question: "Doctor kills you",
+          responses: ["Sad"],
+          functions: [
+            () => {
+              quiz.questions = [];
+            },
+          ],
+        },
+        {
+          question: "End of simulation, there are still a few normal questions",
+          responses: ["Ok"],
+          functions: [
+            () => {
+              
+            },
+          ],
+        },
+        {
+          question: "What do you think of simulation",
+          responses: ["It was fun", "It was alright", "I hate it"],
+          functions: [
+            () => {
+              quizVars.cool += 1;
+              quiz.questions.shift();
+            },
+            () => {
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.dead = true;
+              quizVars.cause = "criticism";
+            },
+          ],
+        },
+        {
+          question: "What did you just say to me. I'll have you know I graduated top of my class in the Navy Seals, and have over 300 confirmed kills. To me, you are just another target.",
+          responses: ["Oh"],
+          functions: [
+            () => {
+              quiz.questions = [];
+            },
+          ],
+        },
+        {
+          question: "What game console count",
+          responses: ["0", "1", "2", "3", "Many more"],
+          functions: [
+            () => {
+              quizVars.dollars -= 10
+            },
+            () => {
+              quizVars.dollars += 20;
+            },
+            () => {
+              quizVars.dollars += 40;
+            },
+            () => {
+              quizVars.dollars -= 60;
+            },
+          ],
+        },
+        {
+          question: "To progress beyond this point, you must buy the season pass ($10.99)",
+          responses: ["Yes", "No"],
+          functions: [
+            () => {
+              quizVars.dollars += 20;
+              quiz.questions.shift();
+            },
+            () => {
+              quizVars.dollars -= 5;
+            },
+          ],
+        },
+        {
+          question: "Just kidding",
+          responses: ["You got me"],
+          functions: [
+            () => {
+              quizVars.dollars += 10;
+            },
+          ],
+        },
+        {
+          question: "Do you like to gamble",
+          responses: ["Yes", "No"],
+          functions: [
+            () => {
+              quizVars.dollars += Math.floor(Math.random()*200)-100;
+            },
+            () => {
+              quizVars.dollars += 5;
+            },
+          ],
+        },
+        {
+          question: "We are now going to the store, what will you buy",
+          responses: ["Expensive things", "Tea", "Nothing I am too poor", "Identity V"],
+          functions: [
+            () => {
+              quizVars.dollars += 150;
+            },
+            () => {
+              quizVars.cool += 1;
+            },
+            () => {
+              quizVars.dollars -= 10;
+            },
+            () => {
+              quizVars.fancyAGame = true;
+            },
+          ],
+        },
+        {
+          question: "That is all the question!",
+          responses: ["Good bye"],
+          functions: [
+            () => {
+              
+            },
+          ],
+        },
+      ],
+      endFunction: () => {
+        string = ""
+        if (quizVars.dollars < 1) {
+          string = `Your score is $${quizVars.dollars}. You are in poverty. That is sad.`
+        } else if (quizVars.dollars < 250) {
+          string = `Your score is $${quizVars.dollars}. You can live a decent life.`
+        } else if (quizVars.dollars < 600) {
+          string = `Your score is $${quizVars.dollars}. You can live a very good life.`
+        } else {
+          string = `Your score is $${quizVars.dollars}. You are certified rich.`
+        }
+        if (quizVars.hatesBeans) {
+          string += '<br>But you hate beans, so screw you.'
+        }
+        if (quizVars.cool > 3) {
+          string += '<br>You are also pretty darn cool.'
+        }
+        if (quizVars.fancyAGame) {
+          string += "<br>I'm playing Identity V, fancy a game?"
+        }
+        if (quizVars.dead) {
+          string += `<br>But that doesn't matter, because you're dead.<br>Cause of death: ${quizVars.cause}`
+        }
+        return string
+      },
+      startFunction: () => {
+        quizVars.dollars = 0;
+        quizVars.hatesBeans = false;
+        quizVars.cool = 0;
+        quizVars.dead = false;
+        quizVars.cause = "";
+        quizVars.fancyAGame = false;
+      },
+    };
+  }
 }
