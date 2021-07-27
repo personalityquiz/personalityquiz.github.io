@@ -3345,9 +3345,9 @@ function getQuiz(quizID) {
         if (quizVars.fancyAGame) addString(`Fancy a game?`)
 
 
-        /*if (quizVars.instantQuit == true) {
+        if (quizVars.instantQuit == true) {
           string = "Rank: stupid<br>Why did you do that?"
-        } */
+        }
         return string
       },
       startFunction: () => {
